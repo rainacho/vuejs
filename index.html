@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>VueJS</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- <input type="text" v-on:input="changeTitle"> -->
+        <h1 v-once>{{title}}</h1>
+        <p>{{ sayHello() }} - <a v-bind:href="link">Portfolio</a></p>
+        <hr>
+        <p v-html="finishedLink"></p>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                title: 'Raina\'s World!',
+                link: 'http://rainadesign.co',
+                finishedLink: '<a href="http://rainadesign.co">Raina\'s portfolio</a>'
+            },
+            methods: {
+                // changeTitle: function(event){
+                // this.title = event.target.value;
+                // },
+                   sayHello: function(){
+                       this.title = 'Hello!';
+                       return this.title;
+                   } 
+            }
+        })
+    </script> 
+</body>
+</html>
