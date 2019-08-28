@@ -15,6 +15,7 @@
             Coordinates: {{ x }} / {{ y }}
             - <span v-on:mousemove.stop>DEAD SPOT</span>
         </p>
+        <input type="text" v-on:keyup.space="alertMe">
     </div>
     <script>
         new Vue({
@@ -33,9 +34,9 @@
                    this.x = e.clientX;
                    this.y = e.clientY;
                },
-                // dummy: function(event) {
-                //     event.stopPropagation();
-                // }
+               alertMe: function() {
+                   alert('Alert!');
+               }
             }
         })
     </script> 
