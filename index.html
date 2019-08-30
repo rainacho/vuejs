@@ -9,11 +9,12 @@
 </head>
 <body>
     <div id="app">
-        <button v-on:click="counter++">Increase</button>
-        <button v-on:click="counter--">Decrease</button>
-        <button v-on:click="secondCounter++">Increase Second</button>
-        <p>Counter: {{ counter }} | {{ secondCounter }}</p>
-        <p>Result: {{ result() }} | {{ output }}</p>
+        <button v-on:click="changeLink">Click to Change Link</button>
+        <a v-bind:href="link">Link</a>
+        <!-- Short Hands for v-on -->
+        <button @click="changeLink">Click to Change Link</button>
+        <!-- Short Hands for v-bind -->
+        <a :href="link">Link</a>
     </div>
     <script>
         new Vue({
